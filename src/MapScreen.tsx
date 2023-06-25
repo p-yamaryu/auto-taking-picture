@@ -4,12 +4,12 @@ import {
   StyleSheet,
   View,
   Text,
-  Image
+  Image,
 } from "react-native";
 import Styled from "styled-components/native";
-import { MapHomeIcon } from "./style";
+import { MapHomeIcon, circle } from "./style";
 import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
-import Logo from "../assets/logo.svg";
+import Logo from "../assets/header-camera.svg";
 import { MainStackParamList, ROUTE_HOME } from "./routes";
 import ReactInterval from "react-interval";
 import { Camera, useCameraDevices } from "react-native-vision-camera";
@@ -48,7 +48,6 @@ export default function MapScreen({ navigation }: MapsProps) {
   };
 
   useEffect(() => {
-    // permission();
     requestLocationPermission();
     requestCameraPermission();
   }, []);
@@ -109,7 +108,7 @@ export default function MapScreen({ navigation }: MapsProps) {
       />
 
       <MapHomeIcon onPress={() => navigation.navigate(ROUTE_HOME)}>
-        <Logo />
+          <Logo />
       </MapHomeIcon>
 
       <ReactInterval

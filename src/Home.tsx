@@ -13,7 +13,8 @@ import {
   CopyrightFooter,
   CopyrightFooterText,
 } from "./style";
-import Logo from "../assets/logo.svg";
+// import Logo from "../assets/logo.svg";
+import Logo from "../assets/header-camera.svg";
 import Camera from "../assets/camera.svg";
 import { MainStackParamList, ROUTE_MAPS } from "./routes";
 import { Alert } from "react-native";

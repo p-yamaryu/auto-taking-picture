@@ -4,6 +4,7 @@ import {
   StyleSheet,
   View,
   Text,
+  Image
 } from "react-native";
 import Styled from "styled-components/native";
 import { MapHomeIcon } from "./style";
@@ -90,7 +91,13 @@ export default function MapScreen({ navigation }: MapsProps) {
             latitude: latitude,
             longitude: longitude,
           }}
-        ></Marker>
+        >
+        <Image
+            source={require("./../assets/walking-man.png")}
+            style={{ width: 44, height: 44 }}
+            resizeMode="contain"
+        />
+        </Marker>
       </MapView>
 
       <Camera

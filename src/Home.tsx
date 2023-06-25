@@ -12,14 +12,11 @@ import {
   LandingButtonText,
   CopyrightFooter,
   CopyrightFooterText,
-  MyColors,
 } from "./style";
 import Logo from "../assets/logo.svg";
 import Camera from "../assets/camera.svg";
 import { MainStackParamList, ROUTE_MAPS } from "./routes";
 import { Alert } from "react-native";
-
-const { emotionMap } = MyColors;
 
 type HomeProps = NativeStackScreenProps<MainStackParamList, "Home">;
 
@@ -42,7 +39,7 @@ export default function Home({ navigation }: HomeProps) {
         <ButtonContainer onPress={() => navigation.navigate(ROUTE_MAPS)}>
           <ButtonContentLeft>
             <IconMargin>
-              <Camera color={emotionMap} width={60} height={60} />
+              <Camera width={80} height={80} />
             </IconMargin>
           </ButtonContentLeft>
           <ButtonContentRight>

@@ -104,7 +104,7 @@ export const InnerLandingContainer = styled.View`
   align-items: center;
   background-color: ${navibackground};
   justify-content: space-evenly;
-  paddingHorizontal: 40px;
+  paddingHorizontal: 30px;
 `;
 
 export const PageTitle = styled.Text`
@@ -281,7 +281,7 @@ export const LandingButtonText = styled.Text`
 `;
 
 export const IconMargin = styled.View`
-  marginRight: 10%;
+  marginRight: 25%;
 `;
 
 export const UserContainer = styled.View`

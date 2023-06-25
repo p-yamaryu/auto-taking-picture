@@ -22,12 +22,6 @@ import { Alert } from "react-native";
 type HomeProps = NativeStackScreenProps<MainStackParamList, "Home">;
 
 export default function Home({ navigation }: HomeProps) {
-  useEffect(() => {
-    Alert.alert(
-      "The application uses a camera to acquire images and the data is used for research."
-    );
-  }, []);
-
   return (
     <RootView>
       <MyLandingHeader>

@@ -33,7 +33,6 @@ export default function MapScreen({ navigation }: MapsProps) {
   
   const [latitude, setLatitude] = useState(0.0);
   const [longitude, setLongitude] = useState(0.0);
-
   const getLocation = () => {
     Geolocation.getCurrentPosition(
       (position) => {
@@ -46,10 +45,17 @@ export default function MapScreen({ navigation }: MapsProps) {
       { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 }
     );
   };
+  
+    const permission = async () => {
+    const result = requestLocationPermission();
+    result.then(async () => {
+      await requestCameraPermission();
+    });
+  }
+
 
   useEffect(() => {
-    requestLocationPermission();
-    requestCameraPermission();
+    permission();
   }, []);
 
   const getCapture = async () => {

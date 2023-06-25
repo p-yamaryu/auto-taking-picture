@@ -13,8 +13,8 @@ import { MainStackParamList, ROUTE_HOME } from "./routes";
 import ReactInterval from "react-interval";
 import { Camera, useCameraDevices } from "react-native-vision-camera";
 import Geolocation from "react-native-geolocation-service";
-import { googleAPIKey } from "../env";
 import { requestCameraPermission, requestLocationPermission } from "./function/permission";
+import { CameraRoll } from "@react-native-camera-roll/camera-roll";
 
 type MapsProps = NativeStackScreenProps<MainStackParamList, "Maps">;
 
@@ -32,13 +32,6 @@ export default function MapScreen({ navigation }: MapsProps) {
   
   const [latitude, setLatitude] = useState(0.0);
   const [longitude, setLongitude] = useState(0.0);
-
-  // const permission = async () => {
-  //   const result = requestLocationPermission();
-  //   result.then(async () => {
-  //     await requestCameraPermission();
-  //   });
-  // };
 
   const getLocation = () => {
     Geolocation.getCurrentPosition(
@@ -60,13 +53,11 @@ export default function MapScreen({ navigation }: MapsProps) {
   }, []);
 
   const getCapture = async () => {
-    if (true) {
       const snapshot = await camera.current.takeSnapshot({
         quality: 85,
         skipMetadata: true,
       });
-      console.log(snapshot);
-    }
+      CameraRoll.save(snapshot.path);
   };
 
   if (device == null)
@@ -105,7 +96,6 @@ export default function MapScreen({ navigation }: MapsProps) {
       <Camera
         ref={camera}
         device={device}
-        // snapshot={true}
         photo={true}
         isActive={true}
         style={styles.camera}

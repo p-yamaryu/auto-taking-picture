@@ -7,7 +7,7 @@ import {
   Image,
 } from "react-native";
 import Styled from "styled-components/native";
-import { MapHomeIcon, circle } from "./style";
+import { MapHomeIcon } from "./style";
 import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
 import Logo from "../assets/header-camera.svg";
 import { MainStackParamList, ROUTE_HOME } from "./routes";
